@@ -8,15 +8,21 @@
   <artifactId>zzboot-util</artifactId>
   <packaging>pom</packaging>
   <version>zzboot.1.1</version>
+    <modules>
+      <module>zzboot-util-config</module>
+      <module>zzboot-util-chars</module>
+    </modules>
 
-  <name>zzboot-util</name>
+    <name>zzboot-util</name>
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <java.version>1.8</java.version>
+    <zzboot.util.version>zzboot.1.1</zzboot.util.version>
   </properties>
 
   <dependencies>
@@ -25,6 +31,12 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.56</version>
     </dependency>
   </dependencies>
 
