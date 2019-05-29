@@ -6,7 +6,11 @@ package com.zzboot.util.config;
  */
 public interface SystemConfig {
 
-
+    /**
+     * 验证方式
+     * 0: 不用验证码 ， 1：使用验证码 ， 2：失败一次后使用验证码
+     */
+    public String getCaptchaType() ;
 
     /**
      * 用户最大并发登陆个数
@@ -40,6 +44,8 @@ public interface SystemConfig {
      * @return
      */
     public String getSelfHelpRegistration();
+
+
 
 
 }
