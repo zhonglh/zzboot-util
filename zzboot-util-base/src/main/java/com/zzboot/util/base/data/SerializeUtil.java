@@ -1,17 +1,17 @@
 package com.zzboot.util.base.data;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 
 import java.io.*;
 
 /**
  * @author Administrator
  */
+@Slf4j
 public class SerializeUtil {
 
-	private static Logger log = Logger.getLogger(SerializeUtil.class);
 
 
 	/**
@@ -72,5 +72,9 @@ public class SerializeUtil {
 		}
 	}
 
+
+	public static void main(String[] args) {
+		System.out.println(serialize("AA"));
+	}
 
 }

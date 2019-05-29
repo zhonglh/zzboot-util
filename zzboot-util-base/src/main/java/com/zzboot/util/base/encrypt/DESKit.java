@@ -1,7 +1,8 @@
 package com.zzboot.util.base.encrypt;
 
 
-import com.zz.bms.util.base.java.SystemPath;
+
+import com.zzboot.util.base.java.SystemPath;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

@@ -13,6 +13,8 @@
       <module>zzboot-util-chars</module>
       <module>zzboot-util-expressions</module>
       <module>zzboot-util-base</module>
+      <module>zzboot-util-file</module>
+        <module>zzboot-util-web</module>
     </modules>
 
     <name>zzboot-util</name>
@@ -49,6 +51,8 @@
     <shiro.version>1.4.0</shiro.version>
     <cas.client.version>3.1.9</cas.client.version>
     <ehcache.version>2.9.0</ehcache.version>
+
+    <lombok.versoin>1.18.2</lombok.versoin>
 
 
     <commons-lang3.version>3.8.1</commons-lang3.version>
@@ -173,6 +177,11 @@
     </dependency>
 
 
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.versoin}</version>
+    </dependency>
 
 
     <!-- utils 相关jar包 -->
@@ -252,6 +261,7 @@
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna</artifactId>
+      <version>4.5.2</version>
     </dependency>
 
 

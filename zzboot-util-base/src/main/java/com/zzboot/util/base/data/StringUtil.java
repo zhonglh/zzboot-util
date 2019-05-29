@@ -1,7 +1,7 @@
 package com.zzboot.util.base.data;
 
-import org.apache.commons.lang.RandomStringUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -35,6 +35,18 @@ public class StringUtil {
 
 
 	private static  Pattern p = Pattern.compile("\\s*|\t|\r|\n");
+
+	private static Pattern pzh= Pattern.compile("[\u4e00-\u9fa5]");
+
+
+	private static Pattern patternD = Pattern.compile("\\D+");
+
+
+	private static  Pattern patternd = Pattern.compile("\\d+");
+
+
+	private static  Pattern patternsz = Pattern.compile("[0-9]{1,}");
+
 
 	/**
 	 * 判断是否数字表示
@@ -297,8 +309,9 @@ public class StringUtil {
 	 **************************************************************************/
 	public static String repeat(String src, int num) {
 		StringBuffer s = new StringBuffer();
-		for (int i = 0; i < num; i++)
+		for (int i = 0; i < num; i++) {
 			s.append(src);
+		}
 		return s.toString();
 	}
 
@@ -310,8 +323,9 @@ public class StringUtil {
 	 */
 	public static List<String> parseString2ListByCustomerPattern(String pattern, String src) {
 
-		if (src == null)
+		if (src == null) {
 			return null;
+		}
 		List<String> list = new ArrayList<String>();
 		String[] result = src.split(pattern);
 		for (int i = 0; i < result.length; i++) {
@@ -387,25 +401,28 @@ public class StringUtil {
 	}
 
 	public static boolean isEmpty(Long obj) {
-		if (obj == null || obj.longValue() == 0)
+		if (obj == null || obj.longValue() == 0) {
 			return true;
-		else
+		}else {
 			return false;
+		}
 	}
 	
 	public static boolean isEmpty(Double obj) {
-		if (obj == null || obj.doubleValue() == 0.0)
+		if (obj == null || obj.doubleValue() == 0.0) {
 			return true;
-		else
+		}else {
 			return false;
+		}
 	}
 	
 
 	public static boolean isEmpty(Object[] Value) {
-		if (Value == null || Value.length == 0)
+		if (Value == null || Value.length == 0) {
 			return true;
-		else
+		}else {
 			return false;
+		}
 	}	
 
 	public static String isEmpty(String s, String result) {
@@ -662,8 +679,9 @@ public class StringUtil {
 	public static boolean strPos(String sou, List<String> finds) {
 		if (sou != null && finds != null && finds.size() > 0) {
 			for (String s : finds) {
-				if (sou.indexOf(s) > -1)
+				if (sou.indexOf(s) > -1) {
 					return true;
+				}
 			}
 		}
 		return false;
@@ -727,8 +745,9 @@ public class StringUtil {
 
 	public static long toLong(String s) {
 		try {
-			if (s != null && !"".equals(s.trim()))
+			if (s != null && !"".equals(s.trim())) {
 				return Long.parseLong(s);
+			}
 		} catch (Exception exception) {
 		}
 		return 0L;
@@ -760,23 +779,23 @@ public class StringUtil {
 	 * @return 返回处理后的字符串
 	 */
 	public static String removeURL(String str) {
-		if (str != null)
+		if (str != null) {
 			str = str.toLowerCase().replaceAll("(http|www|com|cn|org|\\.)+", "");
+		}
 		return str;
 	}
 
 	/**
 	 * 随即生成指定位数的含数字验证码字符串
 	 * 
-	 * @author Peltason
-	 * @date 2007-5-9
-	 * @param bit
-	 *            指定生成验证码位数
+	 * @author admin
+	 * 指定生成验证码位数
 	 * @return String
 	 */
 	public static String numRandom(int bit) {
-		if (bit == 0)
+		if (bit == 0) {
 			bit = 6; // 默认6位
+		}
 		String str = "";
 		str = "0123456789";// 初始化种子
 		return RandomStringUtils.random(bit, str);// 返回6位的字符串
@@ -1805,15 +1824,13 @@ public class StringUtil {
 
 	// 判断一个字符串是否都为数字
 	public boolean isDigit(String strNum) {
-		Pattern pattern = Pattern.compile("[0-9]{1,}");
-		Matcher matcher = pattern.matcher((CharSequence) strNum);
+		Matcher matcher = patternsz.matcher((CharSequence) strNum);
 		return matcher.matches();
 	}
 
 	// 截取数字
 	public String getNumbers(String content) {
-		Pattern pattern = Pattern.compile("\\d+");
-		Matcher matcher = pattern.matcher(content);
+		Matcher matcher = patternd.matcher(content);
 		while (matcher.find()) {
 			return matcher.group(0);
 		}
@@ -1822,8 +1839,7 @@ public class StringUtil {
 
 	// 截取非数字
 	public String splitNotNumber(String content) {
-		Pattern pattern = Pattern.compile("\\D+");
-		Matcher matcher = pattern.matcher(content);
+		Matcher matcher = patternD.matcher(content);
 		while (matcher.find()) {
 			return matcher.group(0);
 		}
@@ -1924,11 +1940,21 @@ public class StringUtil {
 	 */
 	public static boolean checkNumber(String num, String type){
 		String eL = "";
-		if(type.equals("0+"))eL = "^\\d+$";//非负整数
-		else if(type.equals("+"))eL = "^\\d*[1-9]\\d*$";//正整数
-		else if(type.equals("-0"))eL = "^((-\\d+)|(0+))$";//非正整数
-		else if(type.equals("-"))eL = "^-\\d*[1-9]\\d*$";//负整数
-		else eL = "^-?\\d+$";//整数
+		if(type.equals("0+")) {
+			eL = "^\\d+$";//非负整数
+		}
+		else if(type.equals("+")) {
+			eL = "^\\d*[1-9]\\d*$";//正整数
+		}
+		else if(type.equals("-0")) {
+			eL = "^((-\\d+)|(0+))$";//非正整数
+		}
+		else if(type.equals("-")) {
+			eL = "^-\\d*[1-9]\\d*$";//负整数
+		}
+		else {
+			eL = "^-?\\d+$";//整数
+		}
 		Pattern p = Pattern.compile(eL);
 		Matcher m = p.matcher(num);
 		boolean b = m.matches();
@@ -1943,11 +1969,26 @@ public class StringUtil {
 	 */
 	public static boolean checkFloat(String num, String type){
 		String eL = "";
-		if(type.equals("0+"))eL = "^\\d+(\\.\\d+)?$";//非负浮点数
-		else if(type.equals("+"))eL = "^((\\d+\\.\\d*[1-9]\\d*)|(\\d*[1-9]\\d*\\.\\d+)|(\\d*[1-9]\\d*))$";//正浮点数
-		else if(type.equals("-0"))eL = "^((-\\d+(\\.\\d+)?)|(0+(\\.0+)?))$";//非正浮点数
-		else if(type.equals("-"))eL = "^(-((\\d+\\.\\d*[1-9]\\d*)|(\\d*[1-9]\\d*\\.\\d+)|(\\d*[1-9]\\d*)))$";//负浮点数
-		else eL = "^(-?\\d+)(\\.\\d+)?$";//浮点数
+		if(type.equals("0+")) {
+			//非负浮点数
+			eL = "^\\d+(\\.\\d+)?$";
+		}
+		else if(type.equals("+")){
+			//正浮点数
+			eL = "^((\\d+\\.\\d*[1-9]\\d*)|(\\d*[1-9]\\d*\\.\\d+)|(\\d*[1-9]\\d*))$";
+		}
+		else if(type.equals("-0")){
+			//非正浮点数
+			eL = "^((-\\d+(\\.\\d+)?)|(0+(\\.0+)?))$";
+		}
+		else if(type.equals("-")){
+			//负浮点数
+			eL = "^(-((\\d+\\.\\d*[1-9]\\d*)|(\\d*[1-9]\\d*\\.\\d+)|(\\d*[1-9]\\d*)))$";
+		}
+		else {
+			//浮点数
+			eL = "^(-?\\d+)(\\.\\d+)?$";
+		}
 		Pattern p = Pattern.compile(eL);
 		Matcher m = p.matcher(num);
 		boolean b = m.matches();
@@ -1963,8 +2004,7 @@ public class StringUtil {
 	 */
 	public static boolean isChineseChar(String str){
 		boolean temp = false;
-		Pattern p= Pattern.compile("[\u4e00-\u9fa5]");
-		Matcher m=p.matcher(str);
+		Matcher m=pzh.matcher(str);
 		if(m.find()){
 			temp =  true;
 		}

@@ -1,6 +1,6 @@
 package com.zzboot.util.base.java;
 
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -12,9 +12,9 @@ import java.util.regex.Pattern;
  * @author Administrator
  * @desc 通过反射来动态调用get 和 set 方法
  */
+@Slf4j
 public class ReflectHelper {
-	
-	Logger logger = Logger.getLogger(getClass());
+
 
 	private Class cls;
 	/**
@@ -102,7 +102,7 @@ public class ReflectHelper {
 				m.invoke(obj, object);
 				return true;
 			} catch (Exception ex) {
-				logger.info("invoke getter on " + property + " error: " + ex.toString());
+				log.info("invoke getter on " + property + " error: " + ex.toString());
 				return false;
 			}
 		}
@@ -124,7 +124,7 @@ public class ReflectHelper {
 				value=m.invoke(obj, new Object[] {});
 				
 			} catch (Exception ex) {
-				logger.info("invoke getter on " + property + " error: " + ex.toString());
+				log.info("invoke getter on " + property + " error: " + ex.toString());
 			}
 		}else {
 			return this.getFieldValue(property);

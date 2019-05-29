@@ -3,17 +3,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>zzboot-util-expressions</artifactId>
+        <artifactId>zzboot-util</artifactId>
         <groupId>com.zzboot.util</groupId>
         <version>zzboot.1.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>zzboot-util-cron</artifactId>
-    <packaging>jar</packaging>
-    <name>zzboot-util-cron</name>
+    <artifactId>zzboot-util-file</artifactId>
+    <packaging>pom</packaging>
+    <name>zzboot-util-file</name>
     <url>http://www.example.com</url>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -22,23 +20,10 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <dependencies>
 
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.versoin}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zzboot.util</groupId>
-            <artifactId>zzboot-util-base</artifactId>
-            <version>${zzboot.util.version}</version>
-        </dependency>
-
-    </dependencies>
-
+    <modules>
+        <module>zzboot-util-file-base</module>
+    </modules>
 
 
 </project>

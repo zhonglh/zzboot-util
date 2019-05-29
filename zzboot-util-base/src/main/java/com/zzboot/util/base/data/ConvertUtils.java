@@ -1,7 +1,8 @@
 package com.zzboot.util.base.data;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
@@ -19,8 +20,7 @@ import java.util.regex.Pattern;
  * 字符转换
  */
 public class ConvertUtils {
-	
-	private static Logger logger = Logger.getLogger(ConvertUtils.class);
+
 
 	static Map<String, Object> map = new HashMap<String, Object>();
 

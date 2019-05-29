@@ -1,10 +1,10 @@
 package com.zzboot.util.base.java;
 
-import com.zz.bms.util.base.data.StringUtil;
+import com.zzboot.util.base.data.StringUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.*;
 import java.util.*;
@@ -16,9 +16,10 @@ import java.util.regex.Pattern;
  * 提供访问私有变量,获取泛型类型Class, 提取集合中元素的属性, 转换字符串到对象等Util函数.
  * @author zhonglh
  */
+
+@Slf4j
 public class ReflectionSuper {
 
-	private static Logger logger = Logger.getLogger(ReflectionSuper.class);
 
 
 	public static void main(String[] args) {
@@ -187,7 +188,7 @@ public class ReflectionSuper {
 		try {
 			result = field.get(object);
 		} catch (IllegalAccessException e) {
-			logger.error("不可能抛出的异常{}", e);
+			log.error("不可能抛出的异常{}", e);
 			
 		}
 		return result;
@@ -216,7 +217,7 @@ public class ReflectionSuper {
 		try {
 			field.set(object, value);
 		} catch (IllegalAccessException e) {
-			logger.error("不可能抛出的异常:{}", e);
+			log.error("不可能抛出的异常:{}", e);
 		}
 	}
 
@@ -320,19 +321,19 @@ public class ReflectionSuper {
 		}
 
 		if (!(genType instanceof ParameterizedType)) {
-			logger.warn(clazz.getSimpleName() + "'s superclass not ParameterizedType");
+			log.warn(clazz.getSimpleName() + "'s superclass not ParameterizedType");
 			return Object.class;
 		}
 
 		Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
 
 		if (index >= params.length || index < 0) {
-			logger.warn("Index: " + index + ", Size of " + clazz.getSimpleName()
+			log.warn("Index: " + index + ", Size of " + clazz.getSimpleName()
 					+ "'s Parameterized Type: " + params.length);
 			return Object.class;
 		}
 		if (!(params[index] instanceof Class)) {
-			logger.warn(clazz.getSimpleName()
+			log.warn(clazz.getSimpleName()
 					+ " not set the actual class on superclass generic parameter");
 			return Object.class;
 		}
