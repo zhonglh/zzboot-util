@@ -8,23 +8,23 @@
   <artifactId>zzboot-util</artifactId>
   <packaging>pom</packaging>
   <version>zzboot.1.1</version>
-    <modules>
-      <module>zzboot-util-config</module>
-      <module>zzboot-util-chars</module>
-      <module>zzboot-util-expressions</module>
-      <module>zzboot-util-base</module>
-      <module>zzboot-util-file</module>
-      <module>zzboot-util-web</module>
-      <module>zzboot-util-http</module>
-      <module>zzboot-util-template</module>
-      <module>zzboot-util-redis</module>
-      <module>zzboot-util-spring</module>
-      <module>zzboot-util-poi</module>
-        <module>zzboot-util-remote</module>
-    </modules>
-
-    <name>zzboot-util</name>
+  <name>zzboot-util</name>
   <url>http://www.example.com</url>
+
+  <modules>
+    <module>zzboot-util-config</module>
+    <module>zzboot-util-chars</module>
+    <module>zzboot-util-expressions</module>
+    <module>zzboot-util-base</module>
+    <module>zzboot-util-file</module>
+    <module>zzboot-util-web</module>
+    <module>zzboot-util-http</module>
+    <module>zzboot-util-template</module>
+    <module>zzboot-util-redis</module>
+    <module>zzboot-util-spring</module>
+    <module>zzboot-util-remote</module>
+  </modules>
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
