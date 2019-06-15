@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.zzboot.util</groupId>
     <artifactId>zzboot-util-base</artifactId>
     <packaging>jar</packaging>
     <name>zzboot-util-base</name>

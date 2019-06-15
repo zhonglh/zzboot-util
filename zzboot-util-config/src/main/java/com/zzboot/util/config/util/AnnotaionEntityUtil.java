@@ -8,6 +8,12 @@ import com.zzboot.util.config.annotaions.*;
  */
 public class AnnotaionEntityUtil {
 
+
+
+
+
+
+
     /**
      * 获取属性(字段)是否必填
      * @param dbAnnotation
@@ -46,9 +52,9 @@ public class AnnotaionEntityUtil {
      * @return
      */
     public static int  maxLength(EntityAttrDBAnnotation dbAnnotation ,
-                              EntityAttrFkAnnotation fkAnnotation ,
-                              EntityAttrDictAnnotation dictAnnotation,
-                              EntityAttrPageAnnotation pageAnnotation){
+                                 EntityAttrFkAnnotation fkAnnotation ,
+                                 EntityAttrDictAnnotation dictAnnotation,
+                                 EntityAttrPageAnnotation pageAnnotation){
 
         int pageMaxLength = pageAnnotation.maxLength();
 
@@ -73,7 +79,7 @@ public class AnnotaionEntityUtil {
      * @return
      */
     public static int  decimalsLength(EntityAttrDBAnnotation dbAnnotation ,
-                          EntityAttrFkAnnotation fkAnnotation ){
+                                      EntityAttrFkAnnotation fkAnnotation ){
 
 
 
@@ -86,6 +92,9 @@ public class AnnotaionEntityUtil {
         throw new RuntimeException("代码编写错误， 没有在属性中配置注解( EntityAttrDBAnnotation/EntityAttrFkAnnotation/EntityAttrDictAnnotation/EntityAttrPageAnnotation )");
 
     }
+
+
+
 
 
 

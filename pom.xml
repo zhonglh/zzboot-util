@@ -14,7 +14,13 @@
       <module>zzboot-util-expressions</module>
       <module>zzboot-util-base</module>
       <module>zzboot-util-file</module>
-        <module>zzboot-util-web</module>
+      <module>zzboot-util-web</module>
+      <module>zzboot-util-http</module>
+      <module>zzboot-util-template</module>
+      <module>zzboot-util-redis</module>
+      <module>zzboot-util-spring</module>
+      <module>zzboot-util-poi</module>
+        <module>zzboot-util-remote</module>
     </modules>
 
     <name>zzboot-util</name>
@@ -28,11 +34,11 @@
     <java.version>1.8</java.version>
 
     <zzboot.util.version>zzboot.1.1</zzboot.util.version>
-    <springboot.version>2.1.3</springboot.version>
+    <springboot.version>2.1.3.RELEASE</springboot.version>
 
 
     <servlet.version>3.0.1</servlet.version>
-    <jackson.version>4.3.1.RELEASE</jackson.version>
+    <jackson.version>2.9.8</jackson.version>
     <jackson.mapper.version>1.9.13</jackson.mapper.version>
     <fastjson.version>1.2.56</fastjson.version>
     <UserAgentUtils.version>1.21</UserAgentUtils.version>
@@ -45,6 +51,9 @@
     <google.guava.version>27.0.1-jre</google.guava.version>
 
 
+    <poi.version>3.12</poi.version>
+    <jodconverter.version>3.0-beta-4</jodconverter.version>
+    <openoffice.version>3.2.1</openoffice.version>
 
 
     <quartz.version>2.2.3</quartz.version>
@@ -52,15 +61,20 @@
     <cas.client.version>3.1.9</cas.client.version>
     <ehcache.version>2.9.0</ehcache.version>
 
-    <lombok.versoin>1.18.2</lombok.versoin>
+    <lombok.versoin>1.18.6</lombok.versoin>
 
 
+    <commons-email.version>1.2</commons-email.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
     <common-collections4.version>4.2</common-collections4.version>
     <commons-io.version>2.6</commons-io.version>
     <common.fileupload.version>1.3</common.fileupload.version>
     <common.compress.version>1.18</common.compress.version>
     <ant.version>1.9.7</ant.version>
+
+
+    <javatar.vsrsion>2.5</javatar.vsrsion>
+    <junrar.vsrsion>0.7</junrar.vsrsion>
   </properties>
 
   <dependencies>
@@ -71,6 +85,8 @@
       <artifactId>spring-boot-starter-web</artifactId>
       <version>${springboot.version}</version>
     </dependency>
+
+
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -99,6 +115,13 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-websocket</artifactId>
+      <version>${springboot.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-freemarker</artifactId>
       <version>${springboot.version}</version>
     </dependency>
 
@@ -240,6 +263,55 @@
 
 
 
+    <!-- poi start -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>${poi.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>${poi.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml-schemas</artifactId>
+      <version>${poi.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-scratchpad</artifactId>
+      <version>${poi.version}</version>
+    </dependency>
+
+
+    <!-- openoffice start -->
+    <dependency>
+      <groupId>org.openoffice</groupId>
+      <artifactId>juh</artifactId>
+      <version>${openoffice.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openoffice</groupId>
+      <artifactId>unoil</artifactId>
+      <version>${openoffice.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openoffice</groupId>
+      <artifactId>jurt</artifactId>
+      <version>${openoffice.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.artofsolving</groupId>
+      <artifactId>jodconverter</artifactId>
+      <version>${jodconverter.version}</version>
+    </dependency>
+
+
+
+
     <dependency>
       <groupId>org.quartz-scheduler</groupId>
       <artifactId>quartz</artifactId>
@@ -318,6 +390,13 @@
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
+      <version>${httpclient.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpmime</artifactId>
       <version>${httpclient.version}</version>
     </dependency>
 

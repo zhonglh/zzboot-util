@@ -45,7 +45,10 @@ public interface SystemConfig {
      */
     public String getSelfHelpRegistration();
 
-
-
+    /**
+     * 是否需要计算IP所在地址
+     * @return
+     */
+    public boolean isAddressEnabled();
 
 }

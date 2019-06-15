@@ -1,11 +1,10 @@
 package com.zzboot.util.web;
 
+import com.zzboot.util.base.data.StringKit;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-
-import static com.zz.bms.util.base.data.StringKit.decode;
 
 /**
  * @author Administrator
@@ -54,7 +53,7 @@ public class ServletUtil {
         for ( int i = 0 ; i < cookies.length ; i++ ) {
             Cookie cookie = cookies[i];
             if (cookie.getName ().equals (name)) {
-                return decode (cookie.getValue ());
+                return StringKit.decode (cookie.getValue ());
             }
         }
         return "";
