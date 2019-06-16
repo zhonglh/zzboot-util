@@ -33,8 +33,8 @@ public class ReflectHelper {
 	
 	
 	private Hashtable<String, Field> fields = null;
-	
-	
+
+
 	
 
 	/**

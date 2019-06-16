@@ -3,6 +3,7 @@ package com.zzboot.util.base.data;
 
 import org.apache.commons.lang3.time.DateUtils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,6 +12,29 @@ import java.util.Date;
  * 时间工具类
  */
 public class DateKit extends DateUtils {
+
+    private static String[] parsePatterns = {
+            "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM-dd HH", "yyyy-MM",
+            "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM/dd HH", "yyyy/MM",
+            "yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM.dd HH", "yyyy.MM",
+            "yyyy年MM月dd日", "yyyy年MM月dd日 HH时mm分ss秒", "yyyy年MM月dd日 HH时mm分", "yyyy年MM月dd日 HH时", "yyyy年MM月",
+            "yyyy"};
+
+    /**
+     * 日期型字符串转化为日期 格式   see to DateUtils#parsePatterns
+     */
+    public static Date parseDate(String str) {
+        if (str == null){
+            return null;
+        }
+        try {
+            return parseDate(str.toString(), parsePatterns);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
+
+
 
 
     /**
@@ -380,9 +404,6 @@ public class DateKit extends DateUtils {
      * 
      * @param date1
      * @param months
-     * @return
-     * @author 孙钰佳
-     * @since：2008-3-5 下午05:17:26
      */
     public static Date addMonth(Date date1, int months){
         Calendar date = Calendar.getInstance ();
