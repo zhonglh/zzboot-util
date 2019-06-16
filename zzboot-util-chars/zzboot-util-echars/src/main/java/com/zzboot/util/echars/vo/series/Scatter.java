@@ -5,7 +5,7 @@ import com.zzboot.util.echars.vo.base.Label;
 
 /**
  * 散点图表
- * @author zhonglihong
+ * @author Admin
  * @date 2016年12月4日 下午9:47:24
  */
 @SuppressWarnings("serial")

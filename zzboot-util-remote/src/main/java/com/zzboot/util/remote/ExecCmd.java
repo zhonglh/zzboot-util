@@ -4,7 +4,7 @@ package com.zzboot.util.remote;
 import com.zzboot.util.base.java.EnumOsPlatform;
 
 /**
- * @author zhonglh
+ * @author Admin
  */
 public class ExecCmd {
     

@@ -7,7 +7,7 @@ import com.zzboot.util.echars.vo.base.MarkLine;
 
 /**
  * 条状图表
- * @author zhonglihong
+ * @author Admin
  * @date 2016年12月7日 下午6:42:01
  */
 @SuppressWarnings("serial")

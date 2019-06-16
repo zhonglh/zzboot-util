@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 /**
  * 反射工具类.
  * 提供访问私有变量,获取泛型类型Class, 提取集合中元素的属性, 转换字符串到对象等Util函数.
- * @author zhonglh
+ * @author Admin
  */
 
 @Slf4j

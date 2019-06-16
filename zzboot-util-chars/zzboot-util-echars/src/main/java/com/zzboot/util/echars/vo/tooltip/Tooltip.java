@@ -2,7 +2,7 @@ package com.zzboot.util.echars.vo.tooltip;
 
 /**
  * 提示框组件
- * @author zhonglihong
+ * @author Admin
  * @date 2016年12月4日 下午10:07:47
  */
 @SuppressWarnings("serial")

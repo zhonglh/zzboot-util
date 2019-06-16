@@ -13,7 +13,7 @@ import java.util.Enumeration;
 /**
  * 获取IP方法
  *
- * @author ruoyi
+ * @author Admin
  */
 @Slf4j
 public class IpUtil {
