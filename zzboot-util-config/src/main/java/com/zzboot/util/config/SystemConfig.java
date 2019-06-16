@@ -51,4 +51,17 @@ public interface SystemConfig {
      */
     public boolean isAddressEnabled();
 
+
+
+    /**
+     * 是否有面包屑(导航)功能
+     */
+    public boolean useCrumb();
+
+
+    /**
+     * 菜单的最大层级
+     */
+    public int getMenuMaxLevel();
+
 }
