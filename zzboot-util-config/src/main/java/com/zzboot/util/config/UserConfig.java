@@ -10,6 +10,16 @@ public interface UserConfig {
 
     //Excel 设置
 
+
+    /**
+     * Excel操作模式
+     * DefaultCellOperation     默认的操作， 导入导出使用和相应的类型， 比如Java属性为日期， Excel中Cell的类型也是日期
+     * StringCellOperation      在Excel中所有的列属性都是文本类型
+     */
+    public String getExcelOperationModel();
+
+
+
     /**
      * Excel 是否有序号列
      */

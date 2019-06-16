@@ -1,6 +1,6 @@
 package com.zzboot.util.poi.imports;
 
-import com.zzboot.util.configs.AppConfig;
+import com.zzboot.util.config.Global;
 import com.zzboot.util.poi.cell.CellBuild;
 import com.zzboot.util.poi.imports.cell.CellImport;
 import org.apache.poi.POIXMLDocument;
@@ -34,7 +34,7 @@ public class DefaultExcelImport implements ExcelImport{
 
 
     public DefaultExcelImport(InputStream is ){
-        this(is, (AppConfig.EXCEL_EXPORT_HEADER?2:1) , AppConfig.EXCEL_ADD_NUMBER);
+        this(is, (Global.getUserConfig().getExcelExportHeader()?2:1) , Global.getUserConfig().getExcelAddNumber());
     }
 
 

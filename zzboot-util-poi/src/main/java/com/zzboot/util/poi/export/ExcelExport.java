@@ -1,6 +1,6 @@
 package com.zzboot.util.poi.export;
 
-import com.zzboot.util.configs.AppConfig;
+import com.zzboot.util.config.Global;
 import com.zzboot.util.poi.vo.Column;
 
 import javax.servlet.http.HttpServletResponse;
@@ -30,7 +30,7 @@ public interface ExcelExport<T> {
      * @param headers           头信息内容
      */
     public default void exportHeaders(List<String> headers){
-        exportHeaders(headers  , AppConfig.HEADER_DEFAULT_CELLS);
+        exportHeaders(headers  , Global.getUserConfig().getExcelHeaderMaxCells());
     }
 
     /**

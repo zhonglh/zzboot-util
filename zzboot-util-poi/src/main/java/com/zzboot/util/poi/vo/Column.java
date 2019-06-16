@@ -1,5 +1,6 @@
 package com.zzboot.util.poi.vo;
 
+import com.zzboot.util.base.sorts.ISort;
 import org.apache.poi.ss.usermodel.CellStyle;
 
 import java.lang.reflect.Field;
@@ -8,7 +9,7 @@ import java.lang.reflect.Field;
  * 列实体类型
  * @author Administrator
  */
-public class Column implements ISort{
+public class Column implements ISort {
 
 
 	/**

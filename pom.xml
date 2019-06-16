@@ -23,7 +23,7 @@
     <module>zzboot-util-redis</module>
     <module>zzboot-util-spring</module>
     <module>zzboot-util-remote</module>
-    <module>zzboot-util-ppp</module>
+    <module>zzboot-util-poi</module>
   </modules>
 
 

@@ -1,6 +1,6 @@
 package com.zzboot.util.poi.export.excelype;
 
-import com.zzboot.util.configs.annotaions.EntityAnnotation;
+import com.zzboot.util.config.annotaions.EntityAnnotation;
 import com.zzboot.util.poi.export.ExcelExport;
 import com.zzboot.util.poi.export.ExcelTypeExport;
 import com.zzboot.util.poi.vo.Column;

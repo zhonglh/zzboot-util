@@ -2,9 +2,9 @@ package com.zzboot.util.poi.util;
 
 import com.zzboot.util.base.data.StringUtil;
 import com.zzboot.util.base.sorts.SortComparator;
-import com.zzboot.util.configs.AppConfig;
-import com.zzboot.util.configs.annotaions.*;
-import com.zzboot.util.configs.util.AnnotaionEntityUtil;
+import com.zzboot.util.config.Global;
+import com.zzboot.util.config.annotaions.*;
+import com.zzboot.util.config.util.AnnotaionEntityUtil;
 import com.zzboot.util.poi.ExcelDictHolder;
 import com.zzboot.util.poi.vo.Column;
 import com.zzboot.util.spring.ReflectionUtil;
@@ -55,7 +55,7 @@ public class ColumnUtil {
 
     public static <T> List<Column> getExcelColumn(Class<T> mclz , boolean isImport) {
         List<Column> columns = null;
-        if(AppConfig.EXCEL_EXPORT_IMPORT_SAME){
+        if(Global.getUserConfig().getExcelExportImpartSame()){
             columns = ColumnUtil.getAllExcelColumns(mclz);
         }else {
             columns = ColumnUtil.getAllExcelColumns(mclz, isImport);

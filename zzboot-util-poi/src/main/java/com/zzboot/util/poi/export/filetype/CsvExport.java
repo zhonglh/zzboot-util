@@ -2,7 +2,6 @@ package com.zzboot.util.poi.export.filetype;
 
 import com.zzboot.util.base.java.GenericsHelper;
 import com.zzboot.util.base.java.IdUtils;
-import com.zzboot.util.configs.AppConfig;
 import com.zzboot.util.poi.enums.EnumExcelFileType;
 import com.zzboot.util.poi.export.ExcelExport;
 import com.zzboot.util.poi.export.excelype.AbstractXlsExport;

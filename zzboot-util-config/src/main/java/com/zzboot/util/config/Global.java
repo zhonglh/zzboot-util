@@ -16,4 +16,9 @@ public class Global {
     public static void setSystemConfig(SystemConfig systemConfig) {
         Global.systemConfig = systemConfig;
     }
+
+
+    public static UserConfig getUserConfig(){
+        return null;
+    }
 }

@@ -1,11 +1,10 @@
 package com.zzboot.util.poi.cell;
 
-import com.zzboot.util.configs.AppConfig;
+import com.zzboot.util.config.Global;
 import com.zzboot.util.poi.export.cell.CellExport;
 import com.zzboot.util.poi.export.cell.DefaultCellExport;
 import com.zzboot.util.poi.export.cell.StringCellExport;
 import com.zzboot.util.poi.imports.cell.CellImport;
-import com.zzboot.util.poi.cell.CellOperation;
 import com.zzboot.util.poi.imports.cell.DefaultCellImport;
 import com.zzboot.util.poi.imports.cell.StringCellImport;
 
@@ -19,20 +18,20 @@ public class CellBuild {
      * @return
      */
     public static CellExport buildCellExport(){
-        if(AppConfig.EXCEL_OPERATION_MODEL.equals(CellOperation.OPERATION_MODEL_DEFAULT)) {
-            return new DefaultCellExport();
-        }else {
+        if(CellOperation.OPERATION_MODEL_STRING.equals(Global.getUserConfig().getExcelOperationModel())) {
             return new StringCellExport();
+        }else {
+            return new DefaultCellExport();
         }
     }
 
 
     public static CellImport buildCellImport(){
 
-        if(AppConfig.EXCEL_OPERATION_MODEL.equals(CellOperation.OPERATION_MODEL_DEFAULT)) {
-            return new DefaultCellImport();
-        }else {
+        if(CellOperation.OPERATION_MODEL_STRING.equals(Global.getUserConfig().getExcelOperationModel())) {
             return new StringCellImport();
+        }else {
+            return new DefaultCellImport();
         }
     }
 }
