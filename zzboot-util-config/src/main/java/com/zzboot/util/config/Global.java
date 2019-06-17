@@ -6,15 +6,15 @@ package com.zzboot.util.config;
  */
 public class Global {
 
-    private static SystemConfig systemConfig;
+    private static AppConfig appConfig;
 
 
-    public static SystemConfig getSystemConfig() {
-        return Global.systemConfig;
+    public static AppConfig getAppConfig() {
+        return Global.appConfig;
     }
 
-    public static void setSystemConfig(SystemConfig systemConfig) {
-        Global.systemConfig = systemConfig;
+    public static void setAppConfig(AppConfig appConfig) {
+        Global.appConfig = appConfig;
     }
 
 

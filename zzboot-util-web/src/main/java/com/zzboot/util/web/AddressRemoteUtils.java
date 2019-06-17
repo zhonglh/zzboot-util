@@ -26,7 +26,7 @@ public class AddressRemoteUtils {
         if (IpUtil.internalIp(ip)) {
             return "内网IP" ;
         }
-        if (Global.getSystemConfig().isAddressEnabled()) {
+        if (Global.getAppConfig().isAddressEnabled()) {
             String rspStr = HttpUtils.sendPost(IP_URL, "ip=" + ip);
 
             log.info("ip is "+ip + " , address :"+ rspStr);

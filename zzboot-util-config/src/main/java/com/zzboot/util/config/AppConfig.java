@@ -1,10 +1,14 @@
 package com.zzboot.util.config;
 
+import com.zzboot.util.config.enums.EnumAppRunModel;
+
 /**
  * 系统设置
  * @author admin
  */
-public interface SystemConfig {
+public interface AppConfig {
+
+    public EnumAppRunModel getRunModel();
 
     /**
      * 验证方式
