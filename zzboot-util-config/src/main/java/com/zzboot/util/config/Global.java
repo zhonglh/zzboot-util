@@ -8,7 +8,7 @@ public class Global {
 
 
 
-    public static AppConfig getBusinessConfig() {
+    public static BusinessConfig getBusinessConfig() {
         return null;
     }
 
