@@ -8,10 +8,10 @@ package com.zzboot.util.config.enums;
 public enum EnumAppRunModel {
 
 
-    DEV("0" , "开发模式") ,
-    TEST("1" , "测试模式") ,
-    DEMO("2" , "演示模式") ,
-    PROD("3" , "生产模式") ,
+    DEV("dev" , "开发模式") ,
+    TEST("test" , "测试模式") ,
+    DEMO("demo" , "演示模式") ,
+    PROD("prod" , "生产模式") ,
     ;
 
 
