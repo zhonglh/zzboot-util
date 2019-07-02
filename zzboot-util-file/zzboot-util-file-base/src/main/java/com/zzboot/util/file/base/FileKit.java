@@ -83,7 +83,7 @@ public class FileKit {
 
     /**
      * 将源文件的数据写入到目标文件中， 不会检查源文件是否存在， 若目标文件存在则直接写入， 否则创建目标文件后再进行写入。
-     * 
+     *
      * @param srcPath
      * @param desPath
      */
@@ -115,19 +115,19 @@ public class FileKit {
             }
         }
     }
-    
-    
-	public static void copyFile(InputStream in, File file) throws IOException, FileNotFoundException {
-		BufferedInputStream inputStream;
-		BufferedOutputStream outputStream;
-		inputStream = new BufferedInputStream(in);
-		outputStream = new BufferedOutputStream(new FileOutputStream(file));
-		Streams.copy(inputStream, outputStream, false);
-	}
+
+
+    public static void copyFile(InputStream in, File file) throws IOException, FileNotFoundException {
+        BufferedInputStream inputStream;
+        BufferedOutputStream outputStream;
+        inputStream = new BufferedInputStream(in);
+        outputStream = new BufferedOutputStream(new FileOutputStream(file));
+        Streams.copy(inputStream, outputStream, false);
+    }
 
     /**
      * 复制文件，若文件存在则替换该文件。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -142,7 +142,7 @@ public class FileKit {
 
     /**
      * 复制文件，若文件已存在则不进行替换。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -159,7 +159,7 @@ public class FileKit {
 
     /**
      * 移动文件，若文件存在则替换该文件。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -173,7 +173,7 @@ public class FileKit {
 
     /**
      * 移动文件，若文件存在则不进行替换。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -187,7 +187,7 @@ public class FileKit {
 
     /**
      * 复制并合并文件夹， 不会替换目标文件夹中已经存在的文件或文件夹。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -214,7 +214,7 @@ public class FileKit {
 
     /**
      * 复制并替换文件夹， 将目标文件夹完全替换成源文件夹， 目标文件夹原有的资料会丢失。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -241,7 +241,7 @@ public class FileKit {
 
     /**
      * 合并文件夹后，将源文件夹删除。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -255,7 +255,7 @@ public class FileKit {
 
     /**
      * 替换文件夹后，将源文件夹删除。
-     * 
+     *
      * @param srcPath
      * @param desPath
      * @throws Exception
@@ -269,7 +269,7 @@ public class FileKit {
 
     /**
      * 创建文件夹，如果文件夹存在则不进行创建。
-     * 
+     *
      * @param path
      * @throws Exception
      */
@@ -286,7 +286,7 @@ public class FileKit {
 
     /**
      * 创建一个新的文件夹，如果文件夹存在，则删除后再创建。
-     * 
+     *
      * @param path
      * @throws Exception
      */
@@ -303,7 +303,7 @@ public class FileKit {
 
     /**
      * 创建一个文件，如果文件存在则不进行创建。
-     * 
+     *
      * @param path
      * @throws Exception
      */
@@ -320,7 +320,7 @@ public class FileKit {
 
     /**
      * 创建一个新文件，如果存在同名的文件或文件夹将会删除该文件或文件夹， 如果父目录不存在则创建父目录。
-     * 
+     *
      * @param path
      * @throws Exception
      */
@@ -337,7 +337,7 @@ public class FileKit {
 
     /**
      * 分隔符替换 window下测试通过
-     * 
+     *
      * @param path
      * @return
      */
@@ -347,7 +347,7 @@ public class FileKit {
 
     /**
      * 创建文件及其父目录。
-     * 
+     *
      * @param file
      * @throws Exception
      */
@@ -359,7 +359,7 @@ public class FileKit {
 
     /**
      * 创建父目录
-     * 
+     *
      * @param file
      * @throws Exception
      */
@@ -371,7 +371,7 @@ public class FileKit {
 
     /**
      * 根据文件路径删除文件，如果路径指向的文件不存在或删除失败则抛出异常。
-     * 
+     *
      * @param path
      * @return
      * @throws Exception
@@ -390,7 +390,7 @@ public class FileKit {
 
     /**
      * 删除指定目录中指定前缀和后缀的文件。
-     * 
+     *
      * @param dir
      * @param prefix
      * @param suffix
@@ -415,7 +415,7 @@ public class FileKit {
 
     /**
      * 根据路径删除文件夹，如果路径指向的目录不存在则抛出异常， 若存在则先遍历删除子项目后再删除文件夹本身。
-     * 
+     *
      * @param path
      * @throws Exception
      */
@@ -438,7 +438,7 @@ public class FileKit {
 
     /**
      * 查找目标文件夹下的目标文件
-     * 
+     *
      * @param dir
      * @param fileName
      * @return
@@ -470,7 +470,7 @@ public class FileKit {
 
     /**
      * 获得文件类型。
-     * 
+     *
      * @param path
      *            ：文件路径
      * @return
@@ -513,7 +513,7 @@ public class FileKit {
 
     /**
      * 根据文件路径，获得该路径指向的文件的大小。
-     * 
+     *
      * @param path
      * @return
      * @throws FileNotFoundException
@@ -555,7 +555,7 @@ public class FileKit {
 
     /**
      * 根据文件夹路径，获得该路径指向的文件夹的大小。 遍历该文件夹及其子目录的文件，将这些文件的大小进行累加，得出的就是文件夹的大小。
-     * 
+     *
      * @param path
      * @return
      * @throws FileNotFoundException
@@ -580,7 +580,7 @@ public class FileKit {
 
     /**
      * 通过路径获得文件， 若不存在则抛异常， 若存在则返回该文件。
-     * 
+     *
      * @param path
      * @return
      * @throws FileNotFoundException
@@ -596,7 +596,7 @@ public class FileKit {
 
     /**
      * 通过路径获得文件夹， 若不存在则抛异常， 若存在则返回该文件夹。
-     * 
+     *
      * @param path
      * @return
      * @throws FileNotFoundException
@@ -612,7 +612,7 @@ public class FileKit {
 
     /**
      * 获得文件最后更改时间。
-     * 
+     *
      * @param path
      * @return
      * @throws FileNotFoundException
@@ -628,7 +628,7 @@ public class FileKit {
 
     /**
      * 获得文件夹最后更改时间。
-     * 
+     *
      * @param path
      * @return
      * @throws FileNotFoundException
@@ -663,7 +663,7 @@ public class FileKit {
 
     /**
      * 将文件转成base64 字符串
-     * 
+     *
      * @param path 文件路径
      * @return *
      * @throws Exception
@@ -676,7 +676,7 @@ public class FileKit {
 
     /**
      * 将base64字符解码保存文件
-     * 
+     *
      * @param base64Code
      * @param targetPath
      * @throws Exception
@@ -689,7 +689,7 @@ public class FileKit {
 
     /**
      * 将base64字符保存文本文件
-     * 
+     *
      * @param base64Code
      * @param targetPath
      * @throws Exception
@@ -705,7 +705,7 @@ public class FileKit {
 
     /**
      * 将文件头转换成16进制字符串
-     * 
+     *
      * @param src
      * @return 16进制字符串
      */
@@ -726,7 +726,7 @@ public class FileKit {
 
     /**
      * 得到文件头
-     * 
+     *
      * @param filePath
      *            文件路径
      * @return 文件头
@@ -784,9 +784,9 @@ public class FileKit {
         InputStream in = null;
         BufferedReader br = null;
         try {
-        	File f = new File(filePath);
-        	if(!f.exists()) {
-        	    return null;
+            File f = new File(filePath);
+            if(!f.exists()) {
+                return null;
             }
             in = new FileInputStream(f);
             br = new BufferedReader(new InputStreamReader(in,charset));

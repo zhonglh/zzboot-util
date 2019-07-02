@@ -1,15 +1,11 @@
 package com.zzboot.util.base.java;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.*;
 
 /**
- * 线程相关工具类.
- *
- * @author ruoyi
+ * 线程相关工具类
  */
 @Slf4j
 public class ThreadUtil {
