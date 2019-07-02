@@ -34,7 +34,7 @@ public class PubMethod {
             return String.valueOf(val);
         }else if(fieldClz == java.util.Date.class  || fieldClz == java.sql.Date.class ){
             return DateKit.fmtDateToYMD((java.util.Date)val);
-        }else if(fieldClz == Timestamp.class){
+        }else if(fieldClz == java.sql.Timestamp.class){
             return DateKit.dateTo19String((java.util.Date)val);
         }else {
             throw new RuntimeException("列格式错误");
@@ -97,7 +97,7 @@ public class PubMethod {
             return Boolean.valueOf(val);
         }else if(fieldClz == java.util.Date.class  || fieldClz == java.sql.Date.class ){
             return DateKit.fmtStrToDate(val);
-        }else if(fieldClz == Timestamp.class){
+        }else if(fieldClz == java.sql.Timestamp.class){
             return new Timestamp(DateKit.fmtStrToDate(val).getTime());
         }else {
             throw new RuntimeException("列格式错误");
@@ -110,18 +110,21 @@ public class PubMethod {
         if(fieldClz == null ){
             return null;
         }
+
+        BigDecimal bd = new BigDecimal(val);
+
         if(fieldClz == String.class){
-            return String.valueOf(val);
+            return bd.toPlainString();
         }else if(fieldClz == int.class || fieldClz == Integer.class){
-            return new Integer(distaa(String.valueOf(val)));
+            return new Integer(distaa(bd.toPlainString()));
         }else if(fieldClz == long.class || fieldClz == Long.class){
-            return new Long(distaa(String.valueOf(val)));
+            return new Long(distaa(bd.toPlainString()));
         }else if(fieldClz == float.class || fieldClz == Float.class){
             return new Float (val);
         }else if(fieldClz == double.class || fieldClz == Double.class){
             return new Double (val);
         }else if(fieldClz == BigDecimal.class){
-            return new BigDecimal (String.valueOf(val));
+            return new BigDecimal (bd.toPlainString());
         }else if(fieldClz == boolean.class || fieldClz == Boolean.class){
             if(val == 1){
                 return true;
@@ -130,7 +133,7 @@ public class PubMethod {
             }
         }else if(fieldClz == java.util.Date.class  || fieldClz == java.sql.Date.class ){
             throw new RuntimeException("列格式错误");
-        }else if(fieldClz == Timestamp.class){
+        }else if(fieldClz == java.sql.Timestamp.class){
             throw new RuntimeException("列格式错误");
         }else {
             throw new RuntimeException("列格式错误");
@@ -147,7 +150,7 @@ public class PubMethod {
 
         if (fieldClz == java.util.Date.class || fieldClz == java.sql.Date.class) {
             return val;
-        } else if (fieldClz == Timestamp.class) {
+        } else if (fieldClz == java.sql.Timestamp.class) {
             return new Timestamp(val.getTime());
         }else {
             throw new RuntimeException("列格式错误");

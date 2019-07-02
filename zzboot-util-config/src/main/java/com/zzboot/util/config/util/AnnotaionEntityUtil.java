@@ -39,8 +39,9 @@ public class AnnotaionEntityUtil {
             return dictAnnotation.dbColumnNotNull();
         }
 
-        throw new RuntimeException("代码编写错误， 没有在属性中配置注解( EntityAttrDBAnnotation/EntityAttrFkAnnotation/EntityAttrDictAnnotation/EntityAttrPageAnnotation )");
-    }
+
+        return true;
+  }
 
 
     /**
