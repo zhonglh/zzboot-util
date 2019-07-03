@@ -60,7 +60,7 @@ public interface AppConfig {
     /**
      * 是否有面包屑(导航)功能
      */
-    public boolean useCrumb();
+    public boolean getUseCrumb();
 
 
     /**

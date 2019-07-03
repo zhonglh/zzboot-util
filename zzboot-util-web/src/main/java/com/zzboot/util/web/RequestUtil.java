@@ -1,8 +1,26 @@
 package com.zzboot.util.web;
 
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author admin
+ */
 public class RequestUtil {
+
+
+    public static HttpServletRequest getRequest() {
+
+        if(RequestContextHolder.getRequestAttributes() == null) {
+            return ThreadLocalRequestHolder.getRequests();
+        }else {
+            return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        }
+
+
+    }
 
 
     public static String getRequestSimpleURL(HttpServletRequest request) {
