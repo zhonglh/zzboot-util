@@ -1,7 +1,7 @@
 package com.zzboot.util.echars;
 
-
-import com.zzboot.util.echars.vo.series.Data;
+import com.zzboot.util.echars.vo.echarts.series.Data;
+import com.zzboot.util.echars.vo.reports.SmallItem;
 
 import java.util.List;
 
