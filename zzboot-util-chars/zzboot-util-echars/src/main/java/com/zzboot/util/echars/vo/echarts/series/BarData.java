@@ -10,6 +10,12 @@ public class BarData implements Serializable {
     private String[] names ;
     private double[] values;
 
+
+    public BarData(String[] names, double[] values) {
+        this.names = names;
+        this.values = values;
+    }
+
     public String[] getNames() {
         return names;
     }
