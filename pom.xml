@@ -19,11 +19,11 @@
     <module>zzboot-util-file</module>
     <module>zzboot-util-web</module>
     <module>zzboot-util-http</module>
+    <module>zzboot-util-poi</module>
     <module>zzboot-util-template</module>
     <module>zzboot-util-redis</module>
     <module>zzboot-util-spring</module>
     <module>zzboot-util-remote</module>
-    <module>zzboot-util-poi</module>
   </modules>
 
 
