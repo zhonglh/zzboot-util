@@ -43,7 +43,7 @@
     <fastjson.version>1.2.56</fastjson.version>
     <UserAgentUtils.version>1.21</UserAgentUtils.version>
     <json-lib.version>2.4</json-lib.version>
-    <httpclient.version>4.5.7</httpclient.version>
+    <httpclient.version>4.5.13</httpclient.version>
     <oshi.version>3.9.1</oshi.version>
     <pinyin4j.version>2.5.0</pinyin4j.version>
 
