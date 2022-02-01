@@ -74,7 +74,7 @@
 
 
     <javatar.vsrsion>2.5</javatar.vsrsion>
-    <junrar.vsrsion>0.7</junrar.vsrsion>
+    <junrar.vsrsion>7.4.1</junrar.vsrsion>
   </properties>
 
   <dependencies>
