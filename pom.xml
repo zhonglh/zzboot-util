@@ -64,7 +64,7 @@
     <lombok.versoin>1.18.6</lombok.versoin>
 
 
-    <commons-email.version>1.2</commons-email.version>
+    <commons-email.version>1.5</commons-email.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
     <common-collections4.version>4.2</common-collections4.version>
     <commons-io.version>2.6</commons-io.version>
